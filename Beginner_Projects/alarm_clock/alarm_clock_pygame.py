@@ -67,7 +67,7 @@ def draw_button():
     else:
         pygame.draw.rect(screen, BUTTON_COLOR, button_rect)
 
-    text = font.render('Hit Me!', True, TEXT_COLOR)
+    text = font.render('Stop!', True, TEXT_COLOR)
     screen.blit(text, (button_rect.x + (button_rect.width - text.get_width()) // 2, button_rect.y + (button_rect.height - text.get_height()) // 2))
 
 
