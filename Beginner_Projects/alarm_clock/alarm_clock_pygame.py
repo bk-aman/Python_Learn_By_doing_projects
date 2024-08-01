@@ -16,8 +16,8 @@ BUTTON_COLOR = (0,0,128)          # green color for button
 BUTTON_HOVER_COLOR = (128,128,0)    # Red color when button is hovered 
 
 #Path for sound file
-FILE_PATH = "G:\code\Tim_tuts\Beginner_Projects\\alarm_clock\\alarm.mp3"
-# FILE_PATH = os.path.join('G:\\', 'code', 'Tims_tuts', 'Beginner_Projects', 'alarm_clock', 'alarm.mp3')
+FILE_PATH = "G:\code\py_tuts\Beginner_Projects\\alarm_clock\\alarm.mp3"
+# FILE_PATH = os.path.join('G:\\', 'code', 'py_tuts', 'Beginner_Projects', 'alarm_clock', 'alarm.mp3')
 
 #Set up display
 screen = pygame.display.set_mode((WINDOW_WIDTH, WINDOW_HEIGHT))
