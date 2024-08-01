@@ -1,14 +1,9 @@
 import time
 import pygame
-# import colorama
 
-# colorama.init()
 pygame.init()
 
-# FILLED_COLOR = colorama.Back.GREEN
-# EMPTY_COLOR = colorama.Back.RED
-
-# Costants
+# Costants for pygame
 WINDOW_WIDTH = 400
 WINDOW_HEIGHT = 300
 BACKGROUND_COLOR = (30,30,30)     # dark grey     
@@ -18,33 +13,29 @@ BAR_BG_COLOR = (255,0,0)          # green
 FONT_SIZE = 32                    # size of font on screen
 
 
-#ANSI escape character to control cursor and color
-# CLEAR = "\033[2J"
-# CLEAR_AND_RETURN = "\033[2J\033[H"
-# MOVE_TO_SECOND_LINE = "\033[2;0H"
-# COLOR_BAR_PLACE = "\033[2;15H"
-# MOVE_TO_THIRD_LINE = "\033[3;0H"
-# RESET = "\033[0m"
-# GREEN = colorama.Fore.GREEN
-# RED = colorama.Fore.RED
-
+#Path for sound file
 FILE_PATH = "G:\code\Tim_tuts\Beginner_Projects\\alarm_clock\\alarm.mp3"
 # FILE_PATH = os.path.join('G:\\', 'code', 'Tims_tuts', 'Beginner_Projects', 'alarm_clock', 'alarm.mp3')
 
-# Set up display
+#Set up display
 screen = pygame.display.set_mode((WINDOW_WIDTH, WINDOW_HEIGHT))
-pygame.display.set_caption('Alarm Clock')
+pygame.display.set_caption('Alarm Clock with stop button')
 
 #Set up font
 font = pygame.font.SysFont(None, FONT_SIZE)
+pygame.mixer.init()
+
+#Set up button properties
+button_react = pygame.Rect(150, 200, 100, 50)   #Position and size of button
+
 
 
 def play_sound(file_path):
-    pygame.mixer.init()
     try:
         sound = pygame.mixer.Sound(file_path)
         sound.play()
         pygame.time.wait(int(sound.get_length() * 1000))
+
     except pygame.error as e:
         print(f"Error playing sound: {e}")
 
